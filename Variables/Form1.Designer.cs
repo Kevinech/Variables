@@ -35,6 +35,7 @@
             this.btnVerificar = new System.Windows.Forms.Button();
             this.lblVariableLocal = new System.Windows.Forms.Label();
             this.lblVariableGlobal = new System.Windows.Forms.Label();
+            this.btnVerificarG = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -97,11 +98,22 @@
             this.lblVariableGlobal.TabIndex = 6;
             this.lblVariableGlobal.Text = "Variable Global";
             // 
+            // btnVerificarG
+            // 
+            this.btnVerificarG.Location = new System.Drawing.Point(260, 140);
+            this.btnVerificarG.Name = "btnVerificarG";
+            this.btnVerificarG.Size = new System.Drawing.Size(119, 39);
+            this.btnVerificarG.TabIndex = 7;
+            this.btnVerificarG.Text = "Verificar Global";
+            this.btnVerificarG.UseVisualStyleBackColor = true;
+            this.btnVerificarG.Click += new System.EventHandler(this.btnVerificarG_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(503, 387);
+            this.Controls.Add(this.btnVerificarG);
             this.Controls.Add(this.lblVariableGlobal);
             this.Controls.Add(this.lblVariableLocal);
             this.Controls.Add(this.btnVerificar);
@@ -111,6 +123,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,6 +138,7 @@
         private System.Windows.Forms.Button btnVerificar;
         private System.Windows.Forms.Label lblVariableLocal;
         private System.Windows.Forms.Label lblVariableGlobal;
+        private System.Windows.Forms.Button btnVerificarG;
     }
 }
 
