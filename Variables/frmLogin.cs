@@ -6,6 +6,8 @@ namespace Variables
 {
     public partial class FrmLogin : Form
     {
+        int contador = 0;
+
         public FrmLogin()
         {
             InitializeComponent();
@@ -33,17 +35,32 @@ namespace Variables
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            
+
             if (Login(tbUser.Text, tbPassword.Text))
             {
+                
+                this.DialogResult = DialogResult.OK;
+                this.Close();
 
-                new Form1().Show();
-
-                //Form1 frm = new Form1();
-                //frm.Show();
-
-                this.Hide();
-
+                //new FormPrincipal().Show();
+                //this.Hide();
             }
+            else
+            {
+                 contador++;
+                MessageBox.Show("Usuario o contraseña incorrecta");
+            }
+                
+
+            if (contador == 3)
+            {
+                MessageBox.Show("Solo tienes 3 intentos para poder ingresar la contraseña o el usuario"
+                    , "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                this.Close();
+            }
+    
         }
 
         private Boolean Login(String user, String password)
