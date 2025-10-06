@@ -35,8 +35,12 @@ namespace Variables
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            Logear();
+        }
+        
             
-
+        private void Logear()
+        { 
             if (Login(tbUser.Text, tbPassword.Text))
             {
                 
@@ -66,8 +70,14 @@ namespace Variables
         private Boolean Login(String user, String password)
         {
             return user.Equals("admin") && password.Equals("admin");
-        }   
+        }
 
-
+        private void tbPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                Logear();
+            }
+        }
     }
 }
