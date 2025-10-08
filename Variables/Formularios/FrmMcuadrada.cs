@@ -1,18 +1,28 @@
 ﻿using System;
-
-
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Variables.Modelos;
 
 namespace Variables.Formularios
 {
-    
-    public partial class FrmMatriz : Form
+    public partial class FrmMcuadrada : Form
     {
-        Matriz mc = new Matriz();
-        public FrmMatriz()
+        Mcuadrada mc = new Mcuadrada();
+
+        public FrmMcuadrada()
         {
             InitializeComponent();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -27,7 +37,7 @@ namespace Variables.Formularios
             {
                 MessageBox.Show("TIENE QUE SER UN NÚMERO ENTERO, IMBÉCIL", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
+
             if (mc.Agregar(dato))
             {
                 dgvMatriz.DataSource = null;
@@ -36,12 +46,6 @@ namespace Variables.Formularios
                 MessageBox.Show("Agregado");
 
             }
-
-                
-
-                
-
-                
         }
     }
 }
