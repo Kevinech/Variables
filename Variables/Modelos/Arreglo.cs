@@ -75,33 +75,33 @@ namespace Variables.Modelos
 
         public static int GetCantidadMayores()
         {
-            int cantidad = 0;
+            int edadMayor = 0;
 
             foreach(int edad in edades)
             {
                 if (edad > 18 && edad < 120 )
                 {
-                    cantidad++;
+                    edadMayor++;
                 }
                    
             }
-            return cantidad;
+            return edadMayor;
 
         }
 
         public static int GetCantidadMenores()
         {
-            int cantidad1 = 0;
+            int edadMenores = 0;
 
             foreach (int edad in edades)
             {
-                if (edad < 18 && edad < 0)
+                if (edad > 0 && edad < 18)
                 {
-                    cantidad1++;
+                    edadMenores++;
                 }
-                    
             }
-            return cantidad1;
+
+            return edadMenores;
         }
 
 

@@ -25,11 +25,8 @@ namespace Variables.Formularios
                 {
                     Arreglo.edades[Arreglo.pos++] = edad;
                     llenarListado();
-                    MostrarPromedio();
-                    MostrarEdadMaxima();
-                    MostrarEdadMinima();
-                    MostrarCantidadMayores();
-                    MostrarCantidadMenores();
+                    MostrarCalculos();
+
                 }
                 else
                 {
@@ -46,36 +43,21 @@ namespace Variables.Formularios
             lbEdades.DataSource = null;
             lbEdades.DataSource = Arreglo.edades;
             lbEdades.Refresh();
-            gbEdades.Text = "Edades: " +
-                Arreglo.edades.Length;
+            gbEdades.Text = "Edades: " + Arreglo.pos;
             tbEdad.Text = "";
             tbEdad.Focus();
         }
 
-        public void MostrarPromedio()
+        public void MostrarCalculos()
         {
-            lblPromedio.Text = "Promedio:" + Arreglo.GetPromedioI();
-        }
-
-        public void MostrarEdadMaxima()
-        {
-            lblEdadMaxima.Text = "Edad Maxima:" + Arreglo.GetEdadMaxima();
-        }
-
-        public void MostrarEdadMinima()
-        {
+            lblPromedio.Text = "Promedio: " + Arreglo.GetPromedioI();
+            lblEdadMaxima.Text = "Edad Maxima: " + Arreglo.GetEdadMaxima();
             lblEdadMinima.Text = "Edad Minima: " + Arreglo.GetEdadMinima();
-        }
-        public void MostrarCantidadMayores()
-        {
-            lblMayoresEdad.Text = "Cantidad de mayores de edad: " + Arreglo.GetCantidadMenores();
-        }
+            lblMayoresEdad.Text = "Mayores de edad: " + Arreglo.GetCantidadMayores();
+            lblMenoresEdad.Text = "Menores de edad: " + Arreglo.GetCantidadMenores();
+            
 
-        public void MostrarCantidadMenores()
-        {
-            lblMenoresEdad.Text = "Cantidad de menores de edad: " + Arreglo.GetCantidadMenores();
         }
-
         private void FrmArreglo_Load(object sender, EventArgs e)
         {
 

@@ -27,6 +27,7 @@ namespace Variables.Modelos
             }
             matrizCuadrada[r, c] = dato;
             c++;
+            
         }
 
         public int[,] getMatrizC()
